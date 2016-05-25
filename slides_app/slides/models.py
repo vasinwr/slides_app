@@ -13,4 +13,4 @@ class Slides(models.Model):
     img_source = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.slide_text + str(self.page)
+        return self.slide_text +' '+ str(self.page)
