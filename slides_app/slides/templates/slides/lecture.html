@@ -33,15 +33,15 @@
     <a href="{% url 'slides:next page' %}" class="btn btn-primary btn-lg">next</a>
     {% endif %}
     {% if student %}
-    <a href=" #" class="btn btn-warning"><i class="fa fa-frown-o fa-3x" aria-hidden="true"></i></a>
-    <a href="#" class="btn btn-danger"><i class="fa fa-frown-o fa-3x" aria-hidden="true"></i></a>
+    <a href="#" class="btn btn-warning"><i class="fa fa-frown-o fa-3x" aria-hidden="true"></i></a>
+    <a href="{% url 'slides:vote' %}" class="btn btn-danger"><i class="fa fa-frown-o fa-3x" aria-hidden="true"></i></a>
     {% endif %}
 
     <h4>Current class status</h4>
     <div class="progress progress-striped active">
-        <div class="progress-bar progress-bar-success" style="width: {{ votes_rest }}%"></div>
-        <div class="progress-bar progress-bar-warning" style="width: 0%"></div>
         <div class="progress-bar progress-bar-danger" style="width: {{ votes_amplified }}%"></div>
+        <div class="progress-bar progress-bar-warning" style="width: 0%"></div>
+        <div class="progress-bar progress-bar-success" style="width: {{ votes_rest }}%"></div>
     </div>        
     <!-- jQuery -->
     <script src="{% static 'slides/js/jquery.js' %}"></script>

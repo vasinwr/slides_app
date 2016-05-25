@@ -53,4 +53,5 @@ def vote_current(request):
     '''
     current_slide = get_object_or_404(Slides, pk=current.page)
     current_slide.votes += 1
+    current_slide.save()
     return HttpResponseRedirect(reverse('slides:lecture', args=[0]))
