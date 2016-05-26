@@ -34,21 +34,21 @@ def lecture(request, isLecturer):
 def next_page(request):
     current = get_object_or_404(Current, pk=1)
     try:
-	slide = Slides.objects.get(page = current.page + 1)
-	current.page += 1
-	current.save()
+        slide = Slides.objects.get(page = current.page + 1)
+        current.page += 1
+        current.save()
     except Slides.DoesNotExist:
-	pass
+        pass
     return HttpResponseRedirect(reverse('slides:lecture', args=[1]))
 
 def prev_page(request):
     current = get_object_or_404(Current, pk=1)
     try:
-	slide = Slides.objects.get(page = current.page - 1)
-	current.page -= 1
-	current.save()
+        slide = Slides.objects.get(page = current.page - 1)
+        current.page -= 1
+        current.save()
     except Slides.DoesNotExist:
-	pass
+        pass
     return HttpResponseRedirect(reverse('slides:lecture', args=[1]))
 
 def vote_current(request):
