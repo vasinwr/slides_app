@@ -1,4 +1,5 @@
 from channels import Group
+from .models import Slides
 
 '''
 def http_consumer(message):
@@ -8,13 +9,12 @@ def http_consumer(message):
     for chunk in AsgiHandler.encode_response(response):
         message.reply_channel.send(chunk)
 '''
-
 def ws_message(message):
     print("echo here")
     Group("chat").send({
         "text": "[user] %s" % message.content['text'],
     })
-    
+
 # Connected to websocket.connect
 def ws_add(message):
     print(message.reply_channel)
