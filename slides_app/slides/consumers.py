@@ -10,6 +10,7 @@ def http_consumer(message):
 '''
 
 def ws_message(message):
+    print("echo here")
     Group("chat").send({
         "text": "[user] %s" % message.content['text'],
     })
