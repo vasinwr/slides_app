@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'channels',
+    'corsheaders',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -51,6 +52,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'slides_app.urls'
@@ -134,3 +137,10 @@ CHANNEL_LAYERS = {
         "ROUTING": "slides.routing.channel_routing",
     },
 }
+
+
+CORS_ORIGIN_WHITELIST = (
+    '127.0.0.1:9000',
+)
+
+CORS_ALLOW_CREDENTIALS = True
