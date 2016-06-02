@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^slides/', include('slides.urls')),
+    url(r'^gem/', include('gem.urls')),
     url(r'^admin/', admin.site.urls),
 ]

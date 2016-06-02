@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.core.urlresolvers import reverse
 
 from .models import Current, Slides
@@ -39,7 +39,8 @@ def next_page(request):
         current.save()
     except Slides.DoesNotExist:
         pass
-    return HttpResponseRedirect(reverse('slides:lecture', args=[1]))
+#    return HttpResponseRedirect(reverse('slides:lecture', args=[1]))
+    return JsonResponse({'foo':'bar'})
 
 def prev_page(request):
     current = get_object_or_404(Current, pk=1)
