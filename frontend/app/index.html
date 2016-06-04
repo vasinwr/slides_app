@@ -12,6 +12,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" />
 
     <!-- endbower -->
     <!-- endbuild -->
@@ -29,11 +30,11 @@
     <div id="top-half" class="Top-Half">
     
       <div class="Left-Container">
-        <a id="prev" class="btn btn-lg btn-info " href="#"> p </a>
+        <div id="prev"><i class="fa fa-camera-retro"></i></div>
       </div>
       <canvas id="pdfviewer"></canvas>
       <div class="Right-Container">
-        <a id="next" class="btn btn-lg btn-info" href="#"> n </a>
+        <div id="next"><p class="lead"> p </p></div>
       </div>
 
     </div>
@@ -49,12 +50,28 @@
     </div>
 
     <!-- Menu Bar -->
-    <div id="bottom" ng-controller="MenuController as menuCtrl">
-      <div class="center" ng-mouseover="menuCtrl.hover = true" ng-mouseleave="menuCtrl.hover = false">
+    <section ng-controller="MenuController as menuCtrl">
+    <div id="bottom" >
+      <div class="center" ng-mouseover="menuCtrl.hover = true" ng-mouseleave="menuCtrl.hover = false" ng-click="menuCtrl.clicked=true">
         <p ng-show="menuCtrl.hover">menu </p>
       </div>
       <!--menu-list></menu-list-->
     </div>
+
+    <div style="position:absolute; width:100%; bottom:0px;" ng-show="menuCtrl.clicked">
+      <div class="center" style="width:50%; height: 600px; background-color: #cccccc;"> 
+        <div style="position:relative; width:100%; height:20%;">
+          <p class="lead"> questions</p>
+        </div>
+        <div style= "width:100%; height:20%; bottom:0px;" ng-click="menuCtrl.clicked = false">
+          <p class="lead"> close</p>
+        </div>
+
+      </div>
+    </div>
+    </section>
+
+
 
 <!-- ------------------------------------------------------------------------- -->
 

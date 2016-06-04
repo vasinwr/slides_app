@@ -18,14 +18,6 @@ html, body{
   width : 100%;
 }
 
-#menu {
-  position: absolute;
-  width: 50%;
-  margin:auto;
-  bottom: 0; 
-  text-align:center;
-  background-color: red;
-}
 .center {
     margin: auto;
     width: 10%;
@@ -33,7 +25,6 @@ html, body{
     padding: 5px;
     text-align: center;
 }
-
 
 .Bar-Container{
   position: absolute;
@@ -49,19 +40,32 @@ html, body{
   height: 80%;
 }
 
+#prev {
+  position: relative;
+  top: 50%;
+  padding-left: 15%;
+  text-align: center;
+}
 .Left-Container {
   float : left; 
   width: 10%;
   height: 100%;
   min-width: 50px;
-  background-color: red;
+  background-color: #EEE;
+}
+
+#next {
+  position: relative;
+  top: 50%;
+  padding-right: 15%;
+  text-align: center;
 }
 .Right-Container {
   float : right; 
   width: 10%;
   height: 100%;
   min-width: 50px;
-  background-color: red;
+  background-color: #EEE;
 }
 
 #bottom {
@@ -70,6 +74,6 @@ html, body{
   bottom: 0;
 }
 
-.MyClass {
-  text-align:center;
+.red {
+  background-color: red;
 }
