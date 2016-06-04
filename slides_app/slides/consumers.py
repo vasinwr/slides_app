@@ -17,6 +17,7 @@ def ws_message(message):
 
 # Connected to websocket.connect
 def ws_add(message):
+    print("ws_add")
     print(message.reply_channel)
     Group("chat").add(message.reply_channel)
 
