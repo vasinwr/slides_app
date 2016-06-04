@@ -69,3 +69,7 @@ html, body{
   width: 100%;
   bottom: 0;
 }
+
+.MyClass {
+  text-align:center;
+}

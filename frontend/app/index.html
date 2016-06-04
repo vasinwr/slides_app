@@ -50,9 +50,10 @@
 
     <!-- Menu Bar -->
     <div id="bottom" ng-controller="MenuController as menuCtrl">
-      <div class="center">
-        menu {{ menuCtrl.x }} 
+      <div class="center" ng-mouseover="menuCtrl.hover = true" ng-mouseleave="menuCtrl.hover = false">
+        <p ng-show="menuCtrl.hover">menu </p>
       </div>
+      <!--menu-list></menu-list-->
     </div>
 
 <!-- ------------------------------------------------------------------------- -->

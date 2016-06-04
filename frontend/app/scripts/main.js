@@ -4,6 +4,16 @@ Mousetrap.bind('left', function() { alert("previous page") });
 
 var app = angular.module('lecture',[]);
 app.controller('MenuController', function(){
-  this.x = 123; 
+  this.hover = false; 
   this.menu_clicked = false;
 });
+
+app.directive('menuList', function(){
+  return{
+    restrict: 'E',
+    templateUrl: 'ng_template/menu-list.html',
+    link: function(scope, element){
+      element.addClass('MyClass');
+    }
+  };
+})
