@@ -6,6 +6,11 @@ var app = angular.module('lecture',[]);
 app.controller('MenuController', function(){
   this.hover = false; 
   this.clicked = false;
+  this.summ_hover  = false;
+  this.ques_hover  = false;
+  this.navi_hover  = false;
+  this.home_hover  = false;
+  this.close_hover = false;
 });
 
 app.directive('menuList', function(){
@@ -15,3 +20,8 @@ app.directive('menuList', function(){
   };
 });
 
+
+app.controller('SidesController', function(){
+  this.left_hover = false; 
+  this.right_hover = false;
+});

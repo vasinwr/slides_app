@@ -27,14 +27,18 @@
   <body>
 
     <!-- Top half -->
-    <div id="top-half" class="Top-Half">
+    <div id="top-half" class="Top-Half" ng-controller="SidesController as sides">
     
-      <div class="Left-Container">
-        <div id="prev"><i class="fa fa-camera-retro"></i></div>
+      <div class="Left-Container" ng-class="{'Side-Hover' : sides.left_hover}" 
+                                  ng-mouseover="sides.left_hover = true"
+                                  ng-mouseleave="sides.left_hover = false">
+        <div id="prev"><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></div>
       </div>
       <canvas id="pdfviewer"></canvas>
-      <div class="Right-Container">
-        <div id="next"><p class="lead"> p </p></div>
+      <div class="Right-Container" ng-class="{'Side-Hover' : sides.right_hover}" 
+                                  ng-mouseover="sides.right_hover = true"
+                                  ng-mouseleave="sides.right_hover = false">
+        <div id="next"><i class="fa fa-angle-right fa-2x" aria-hidden="true"></i></div>
       </div>
 
     </div>
@@ -43,7 +47,7 @@
     <div class="container Bar-Container">
       <p class="lead">Current class status</p>
       <div class="progress progress">
-          <div id="red_bar" class="progress-bar progress-bar-danger" style="width: 0%"></div>
+          <div id="red_bar" class="progress-bar progress-bar-danger" style="width: 80%"></div>
           <div class="progress-bar progress-bar-warning" style="width: 0%"></div>
           <div id="green_bar" class="progress-bar progress-bar-success" style="width: 20%"></div>
       </div>
@@ -53,22 +57,50 @@
     <section ng-controller="MenuController as menuCtrl">
     <div id="bottom" >
       <div class="center" ng-mouseover="menuCtrl.hover = true" ng-mouseleave="menuCtrl.hover = false" ng-click="menuCtrl.clicked=true">
+
+        <i class="fa fa-sort-asc" aria-hidden="true" style="height:10px;"></i>
         <p ng-show="menuCtrl.hover">menu </p>
       </div>
       <!--menu-list></menu-list-->
     </div>
 
-    <div style="position:absolute; width:100%; bottom:0px;" ng-show="menuCtrl.clicked">
-      <div class="center" style="width:50%; height: 600px; background-color: #cccccc;"> 
-        <div style="position:relative; width:100%; height:20%;">
-          <p class="lead"> questions</p>
+    <div id="menu-popup-container" ng-show="menuCtrl.clicked">
+      <div id="menu-popup-inner"> 
+        <div id="menu-popup-summ-container" ng-mouseover="menuCtrl.summ_hover=true"
+                                            ng-mouseleave="menuCtrl.summ_hover=false">
+          <div id="menu-popup-summ-inner" ng-class="{'menu-summ-hover':menuCtrl.summ_hover}">
+          <p class="lead"><br /> summary </p>
+          </div>
         </div>
-        <div style= "width:100%; height:20%; bottom:0px;" ng-click="menuCtrl.clicked = false">
-          <p class="lead"> close</p>
+        <div id="menu-popup-ques-container" ng-mouseover="menuCtrl.ques_hover=true"
+                                          ng-mouseleave="menuCtrl.ques_hover=false">
+          <div id="menu-popup-ques-inner" ng-class="{'menu-ques-hover':menuCtrl.ques_hover}">
+            <p class="lead"><br /> questions </p>
+          </div>
+        </div>
+        <div id="menu-popup-navi-container" ng-mouseover="menuCtrl.navi_hover=true"
+                                            ng-mouseleave="menuCtrl.navi_hover=false">
+          <div id="menu-popup-navi-inner" ng-class="{'menu-navi-hover':menuCtrl.navi_hover}">
+          <p class="lead"><br /> <i class="fa fa-compass fa-2x" aria-hidden="true"></i> </p>
+          </div>
+        </div>
+        <div id="menu-popup-home-container" ng-mouseover="menuCtrl.home_hover=true"
+                                            ng-mouseleave="menuCtrl.home_hover=false">
+          <div id="menu-popup-home-inner" ng-class="{'menu-home-hover':menuCtrl.home_hover}" >
+          <p class="lead"><br /> <i class="fa fa-home fa-2x" aria-hidden="true"></i> </p>
+          </div>
+        </div>
+        <div id="menu-popup-close">
+          <i class="fa fa-times-circle fa-3x" ng-class="{'menu-close-hover':menuCtrl.close_hover}" 
+                                              ng-mouseover="menuCtrl.close_hover = true"
+                                              ng-mouseleave="menuCtrl.close_hover = false"
+                                              ng-click="menuCtrl.clicked = false" 
+                                              aria-hidden="true"></i>
         </div>
 
       </div>
     </div>
+    <div class="Background-Dark" ng-show="menuCtrl.clicked"></div>
     </section>
 
 
