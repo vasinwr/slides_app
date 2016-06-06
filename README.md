@@ -1,4 +1,5 @@
-webapp for slide-based live lecture feedback:
+My mini project to try out webapp tools 
 
 frontend tools: yeoman, gulp, bower. Angularjs.
-backend framework: django
+
+backend: django framework, channels
