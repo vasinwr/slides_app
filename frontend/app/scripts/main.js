@@ -11,6 +11,9 @@ app.controller('MenuController', function(){
   this.navi_hover  = false;
   this.home_hover  = false;
   this.close_hover = false;
+  this.ques = [{question: "what happens if I fail?", votes: 10}, 
+               {question: "are labs open on bank holiday", votes: 8},
+               {question: "what happened to our coke machine", votes: 3}]
 });
 
 app.directive('menuList', function(){

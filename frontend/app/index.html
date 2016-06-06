@@ -69,13 +69,31 @@
         <div id="menu-popup-summ-container" ng-mouseover="menuCtrl.summ_hover=true"
                                             ng-mouseleave="menuCtrl.summ_hover=false">
           <div id="menu-popup-summ-inner" ng-class="{'menu-summ-hover':menuCtrl.summ_hover}">
-          <p class="lead"><br /> summary </p>
+            <p class="lead bigger-font"><u>summary</u></p>
+            <div id="summary-container"> 
+              <div class="summary-icon">
+                <i class="fa fa-diamond" style="font-size: 40px" aria-hidden="true"></i>
+                <p> super x14 </p>
+              </div> 
+              <div class="summary-icon">
+                <i class="fa fa-fighter-jet" style="font-size: 40px"aria-hidden="true"></i>
+                <p> way too fast x5 </p>
+              </div> 
+              <div class="summary-icon">
+                <i class="fa fa-deaf" style="font-size: 40px"aria-hidden="true"></i>
+                <p> i'm lost x2 </p>
+              </div> 
+            </div>
           </div>
         </div>
         <div id="menu-popup-ques-container" ng-mouseover="menuCtrl.ques_hover=true"
                                           ng-mouseleave="menuCtrl.ques_hover=false">
           <div id="menu-popup-ques-inner" ng-class="{'menu-ques-hover':menuCtrl.ques_hover}">
-            <p class="lead"><br /> questions </p>
+            <p class="lead bigger-font"><u>questions</u></p>
+            <p class="lead normal-font">{{ menuCtrl.ques[0].question }} - {{ menuCtrl.ques[0].votes }} <i class="fa fa-thumbs-up" aria-hidden="true"></i> </p>
+            <p class="lead normal-font">{{ menuCtrl.ques[1].question }} - {{ menuCtrl.ques[1].votes}} <i class="fa fa-thumbs-up" aria-hidden="true"></i> </p>
+            <p class="lead normal-font">{{ menuCtrl.ques[2].question }} - {{ menuCtrl.ques[2].votes}} <i class="fa fa-thumbs-up" aria-hidden="true"></i> </p>
+            <p class="lead normal-font"> ... </p>
           </div>
         </div>
         <div id="menu-popup-navi-container" ng-mouseover="menuCtrl.navi_hover=true"
