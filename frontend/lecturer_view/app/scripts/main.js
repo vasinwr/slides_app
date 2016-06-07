@@ -6,14 +6,14 @@ var app = angular.module('lecture',[]);
 app.controller('MenuController', function(){
   this.hover = false; 
   this.clicked = false;
-  this.summ_hover  = false;
-  this.ques_hover  = false;
-  this.navi_hover  = false;
-  this.home_hover  = false;
-  this.close_hover = false;
-  this.ques = [{question: "what happens if I fail?", votes: 10}, 
-               {question: "are labs open on bank holiday", votes: 8},
-               {question: "what happened to our coke machine", votes: 3}]
+  this.summ_hover  =false ;
+  this.ques_hover  =false ;
+  this.navi_hover  =false ;
+  this.home_hover  =false ;
+  this.close_hover =false ;
+  this.ques = [{question: 'what happens if I fail?', votes: 10}, 
+               {question: 'are labs open on bank holiday', votes: 8},
+               {question: 'what happened to our coke machine', votes: 3}]
 });
 
 app.directive('menuList', function(){
