@@ -48,3 +48,38 @@ app.directive('menuList', function(){
     templateUrl: 'ng_template/menu-list.html'
   };
 });
+
+
+
+/*
+var url ="http://127.0.0.1:8000/media/Backpropagation.pdf";
+console.log(url);
+      var maxPages = 0;
+      var scale = 1.5;
+      var canvas = document.getElementById('pdfviewer');
+      var context = canvas.getContext('2d');
+      var viewport = 0;
+      var renderContext = 0;
+      getPDF();
+      function getPDF() {
+        PDFJS.disableWorker = true;
+      //  PDFJS.workerSrc = "scripts/pdf.worker.js";
+        PDFJS.getDocument(url).then(function getPdfViewer(pdf) {
+          // Fetch the first page
+          maxPages = pdf.numPages;
+          pdf.getPage(1).then(function getPageViewer(page) {
+            viewport = page.getViewport(scale);
+            // Prepare canvas using PDF page dimensions
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            // Render PDF page into canvas context
+            renderContext = {
+              canvasContext: context,
+              viewport: viewport
+            };
+           page.render(renderContext);
+          });
+          checkmax();
+        });
+      }
+      */
